@@ -5,18 +5,21 @@ permalink:           pretty
 relative_permalinks: false
 
 # Setup
-title:               Lanyon
-tagline:             'A Jekyll theme'
-description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://jiarongqiu.github.io
+title:               Jiarong Qiu's Workspace
+tagline:             ''
+description:         'This a personal space for documenting EVERYTHING!'
+url:                 "http://127.0.0.1:4000"
 baseurl:             ''
-paginate:            5
+plugins:             [jekyll-paginate]
+paginate:             2
+paginate_path:        /page:num/
 
 # About/contact
 author:
-  name:              Mark Otto
+  name:              Jiarong Qiu
   url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  email:             jiarong_qiu@sina.com
 
 # Custom vars
 version:             1.0.0
+excerpt_separator: <!--excerpt-->
