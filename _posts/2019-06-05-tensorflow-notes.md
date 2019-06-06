@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TensorFlow Op
+title: TensorFlow Notes
 categories: [Deep Learning]
 tags: [TensorFlow]
 ---
@@ -16,4 +16,9 @@ if (node_def->op() == "VarHandleOp") {
     } else {
       tensor_names.push_back(node_name + ":0");
     }
+```
+
+### Get tensor shape as list
+```
+tensor.get_shape().as_list()
 ```
