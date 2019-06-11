@@ -22,3 +22,19 @@ if (node_def->op() == "VarHandleOp") {
 ```
 tensor.get_shape().as_list()
 ```
+
+### Add Regularization Loss
+Sometimes, using var_scope can not add regularizers to weights. To check it, use
+```
+tf.losses.get_regularization_loss()
+```
+To manually add regularizers, define
+```
+  l2_loss = tf.reduce_sum([tf.nn.l2_loss(var) for var in in tf.trainable_variables(): ]) * regularization_weights
+``` 
+
+### Turn Off Verbose
+```
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+```
