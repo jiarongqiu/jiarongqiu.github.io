@@ -32,3 +32,9 @@ To manually add regularizers, define
 ```
   l2_loss = tf.reduce_sum([tf.nn.l2_loss(var) for var in in tf.trainable_variables(): ]) * regularization_weights
 ``` 
+
+### Turn Off Verbose
+```
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+```
