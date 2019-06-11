@@ -7,8 +7,7 @@ relative_permalinks: false
 # Setup
 title:               Jiarong Qiu's Workspace
 tagline:             ''
-description:         'This a personal space for documenting EVERYTHING!'
-url:                 "http://127.0.0.1:4000"
+description:         'This my personal space to document EVERYTHING!'
 baseurl:             ''
 plugins:             [jekyll-paginate]
 paginate:             2
