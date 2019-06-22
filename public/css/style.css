@@ -972,16 +972,16 @@ body.modal-open .cross-portfolio {
 
 /* Media Query */
 
-@media screen and (max-width: 80em) {
+/*@media screen and (max-width: 80em) {
   figure {
     display: inline-block;
     float: none;
     margin: 10px auto;
     width: 100%;
   }
-}
+}*/
 
-@media screen and (max-width: 50em) {
+/*@media screen and (max-width: 50em) {
   .title,
   .cross-portfolio {
     font-size: 90%;
@@ -1007,7 +1007,7 @@ body.modal-open .cross-portfolio {
     margin: 10px auto;
     width: 100%;
   }
-}
+}*/
 
 @media screen and (max-width: 27em) {
   .cross-portfolio .bg-img::after {
