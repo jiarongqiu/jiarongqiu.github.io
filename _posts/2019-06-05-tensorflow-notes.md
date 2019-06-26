@@ -4,6 +4,11 @@ title: TensorFlow Notes
 categories: [Deep Learning]
 tags: [TensorFlow]
 ---
+* [VarHandleOp](#varhandleop)
+* [Get tensor shape as list](#get-tensor-shape-as-list)
+* [Add Regularization Loss](#add-regularization-loss)
+* [Turn Off Verbose](#turn-off-verbose)
+<!--excerpt-->
 
 ### VarHandleOp
 As seen in [freeze_saved_model.cc](https://github.com/tensorflow/tensorflow/blob/bd13eb08e410787e28e7c5cd0153fad28e3cf9f1/tensorflow/cc/tools/freeze_saved_model.cc),
@@ -34,12 +39,6 @@ To manually add regularizers, define
 ``` 
 
 ### Turn Off Verbose
-```
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-```
-
-### Avoid TF Verbose Info
 ```
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
