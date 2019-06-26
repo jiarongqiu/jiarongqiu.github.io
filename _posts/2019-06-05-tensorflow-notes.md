@@ -4,10 +4,12 @@ title: TensorFlow Notes
 categories: [Deep Learning]
 tags: [TensorFlow]
 ---
+
 * [VarHandleOp](#varhandleop)
 * [Get tensor shape as list](#get-tensor-shape-as-list)
 * [Add Regularization Loss](#add-regularization-loss)
 * [Turn Off Verbose](#turn-off-verbose)
+
 <!--excerpt-->
 
 ### VarHandleOp
