@@ -38,3 +38,11 @@ To manually add regularizers, define
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 ```
+
+### Avoid TF Verbose Info
+```
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+import logging
+logging.getLogger("tensorflow").setLevel(logging.ERROR)
+```
