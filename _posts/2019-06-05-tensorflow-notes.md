@@ -10,6 +10,7 @@ tags: [TensorFlow]
 * [Add Regularization Loss](#add-regularization-loss)
 * [Turn Off Verbose](#turn-off-verbose)
 * [Gradients Clipping](#gradients-clipping)
+* [Using TensorRT in TF](https://docs.nvidia.com/deeplearning/frameworks/tf-trt-user-guide/index.html#benefits)
 <!--excerpt-->
 
 ### VarHandleOp
