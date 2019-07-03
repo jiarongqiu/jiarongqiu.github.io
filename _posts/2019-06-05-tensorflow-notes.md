@@ -10,7 +10,8 @@ tags: [TensorFlow]
 * [Add Regularization Loss](#add-regularization-loss)
 * [Turn Off Verbose](#turn-off-verbose)
 * [Gradients Clipping](#gradients-clipping)
-* [Using TensorRT in TF](https://docs.nvidia.com/deeplearning/frameworks/tf-trt-user-guide/index.html#benefits)
+* [Using TensorRT in TF](#using-tensorrt-in-tf)
+* [Freeze a TF Graph](https://zhuanlan.zhihu.com/p/64099452)
 <!--excerpt-->
 
 ### VarHandleOp
@@ -70,3 +71,7 @@ According to TensorFlow's doc, the idea is to collect graidents of all trainable
   If `clip_norm > global_norm` then the entries in `t_list` remain as they are,
   otherwise they're all shrunk by the global ratio.
 ```
+
+### Using TensorRT in TF
+* [Nvidia Docs](https://docs.nvidia.com/deeplearning/frameworks/tf-trt-user-guide/index.html#benefits)
+* [TF Example](https://github.com/tensorflow/tensorrt/blob/master/tftrt/examples/image-classification/image_classification.py)
