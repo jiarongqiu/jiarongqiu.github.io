@@ -4,7 +4,7 @@ title: TensorFlow Notes
 categories: [Deep Learning]
 tags: [TensorFlow]
 ---
-
+## Doc
 * [VarHandleOp](#varhandleop)
 * [Get tensor shape as list](#get-tensor-shape-as-list)
 * [Add Regularization Loss](#add-regularization-loss)
@@ -12,6 +12,9 @@ tags: [TensorFlow]
 * [Gradients Clipping](#gradients-clipping)
 * [Using TensorRT in TF](#using-tensorrt-in-tf)
 * [Freeze a TF Graph](https://zhuanlan.zhihu.com/p/64099452)
+
+## Bug
+* [Freeze Graph](#freeze-graph)
 <!--excerpt-->
 
 ### VarHandleOp
@@ -75,3 +78,38 @@ According to TensorFlow's doc, the idea is to collect graidents of all trainable
 ### Using TensorRT in TF
 * [Nvidia Docs](https://docs.nvidia.com/deeplearning/frameworks/tf-trt-user-guide/index.html#benefits)
 * [TF Example](https://github.com/tensorflow/tensorrt/blob/master/tftrt/examples/image-classification/image_classification.py)
+
+
+### Freeze Graph
+This is due to the **tf.nn.rnn_cell.DropoutWrapper** in model definition. I suppose this method is not supported by freeze graph. Yet, freeze graph does not provide relevant traceback for it.
+```
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/workspace/code/rnnquant/mains/freeze_graph.py", line 35, in <module>
+    initializer_nodes=''
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/tools/freeze_graph.py", line 363, in freeze_graph
+    checkpoint_version=checkpoint_version)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/tools/freeze_graph.py", line 190, in freeze_graph_with_def_protos
+    var_list=var_list, write_version=checkpoint_version)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saver.py", line 832, in __init__
+    self.build()
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saver.py", line 844, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saver.py", line 881, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saver.py", line 487, in _build_internal
+    names_to_saveables)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saving/saveable_object_util.py", line 338, in validate_and_slice_inputs
+    for converted_saveable_object in saveable_objects_for_op(op, name):
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saving/saveable_object_util.py", line 207, in saveable_objects_for_op
+    variable, "", name)
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/training/saving/saveable_object_util.py", line 83, in __init__
+    self.handle_op = var.op.inputs[0]
+  File "/usr/local/lib/python3.5/dist-packages/tensorflow/python/framework/ops.py", line 2195, in __getitem__
+    return self._inputs[i]
+IndexError: list index out of range
+
+```
