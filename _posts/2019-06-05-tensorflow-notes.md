@@ -4,18 +4,20 @@ title: TensorFlow Notes
 categories: [Deep Learning]
 tags: [TensorFlow]
 ---
-## Doc
+## Docs
 * [VarHandleOp](#varhandleop)
 * [Get tensor shape as list](#get-tensor-shape-as-list)
 * [Add Regularization Loss](#add-regularization-loss)
 * [Turn Off Verbose](#turn-off-verbose)
 * [Gradients Clipping](#gradients-clipping)
 * [Using TensorRT in TF](#using-tensorrt-in-tf)
-* [Freeze a TF Graph](https://zhuanlan.zhihu.com/p/64099452)
+* [Freeze a TF Graph](freeze-a-tf-graph)
 
-## Bug
+## Bugs
 * [Freeze Graph](#freeze-graph)
 <!--excerpt-->
+
+## Docs
 
 ### VarHandleOp
 As seen in [freeze_saved_model.cc](https://github.com/tensorflow/tensorflow/blob/bd13eb08e410787e28e7c5cd0153fad28e3cf9f1/tensorflow/cc/tools/freeze_saved_model.cc),
@@ -79,6 +81,18 @@ According to TensorFlow's doc, the idea is to collect graidents of all trainable
 * [Nvidia Docs](https://docs.nvidia.com/deeplearning/frameworks/tf-trt-user-guide/index.html#benefits)
 * [TF Example](https://github.com/tensorflow/tensorrt/blob/master/tftrt/examples/image-classification/image_classification.py)
 
+### Freeze a TF Graph
+* [Python API](https://zhuanlan.zhihu.com/p/64099452)
+* Also, it can be done manually
+```
+frozen_graph = tf.graph_util.convert_variables_to_constants(
+                tf_sess,
+                tf_sess.graph_def,
+                output_node_names=['logits', 'classes']
+            )
+```
+
+## Bugs
 
 ### Freeze Graph
 This is due to the **tf.nn.rnn_cell.DropoutWrapper** in model definition. I suppose this method is not supported by freeze graph. Yet, freeze graph does not provide relevant traceback for it.
