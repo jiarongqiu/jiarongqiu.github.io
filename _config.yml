@@ -10,7 +10,7 @@ tagline:             ''
 description:         'This my personal space to document EVERYTHING!'
 baseurl:             ''
 plugins:             [jekyll-paginate]
-paginate:             2
+paginate:             5
 paginate_path:        /page:num/
 
 # About/contact
