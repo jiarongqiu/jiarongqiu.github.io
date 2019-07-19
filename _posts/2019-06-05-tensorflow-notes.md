@@ -78,6 +78,29 @@ According to TensorFlow's doc, the idea is to collect graidents of all trainable
 ```
 
 ### Using TensorRT in TF
+```
+  with tf.Graph().as_default() as graph:
+        with tf.Session() as sess:
+            saver = tf.train.import_meta_graph("/workspace/exps/ptb/ptb_rnn_128/ptb_rnn_128-72600.meta")
+
+            # Then restore your training data from checkpoint files:
+            saver.restore(sess, "/workspace/exps/ptb/ptb_rnn_128/ptb_rnn_128-72600")
+
+            # Finally, freeze the graph:
+            your_outputs = ['model/dense/BiasAdd']
+            frozen_graph = tf.graph_util.convert_variables_to_constants(
+                sess,
+                tf.get_default_graph().as_graph_def(),
+                output_node_names=your_outputs)
+            trt_graph = trt.create_inference_graph(
+                input_graph_def=frozen_graph,
+                outputs=your_outputs,
+                max_batch_size=10,
+                max_workspace_size_bytes=2 << 20,
+                precision_mode='fp16')
+            tf.train.write_graph(trt_graph, "/workspace/exps/ptb/ptb_rnn_128", "trt_model.pb", as_text=False)
+    print('done')
+```
 * [Nvidia Docs](https://docs.nvidia.com/deeplearning/frameworks/tf-trt-user-guide/index.html#benefits)
 * [TF Example](https://github.com/tensorflow/tensorrt/blob/master/tftrt/examples/image-classification/image_classification.py)
 
