@@ -1,3 +1,9 @@
+---
+layout: post
+title: Deep Learning Notes
+categories: [Computer Science]
+tags: [Deep Learning]
+---
 ## Training Tricks
 * [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/) 
 * [Early Stopping Mechanism](https://www.datalearner.com/blog/1051537860479157)

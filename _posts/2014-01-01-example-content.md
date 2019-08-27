@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Example content
-categories: [CS, travel]
-tags: [hot, summer]
+categories: [Jekyll]
+tags: []
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TensorFlow Notes
-categories: [Deep Learning]
+categories: [Computer Science]
 tags: [TensorFlow]
 ---
 ## Docs

@@ -4,23 +4,18 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <!-- <a href="{{ site.baseurl }}/{{ post.url }}"> -->
-      <a href="{{ post.url | prepend: site.baseurl}}">
-        {{ post.title }}
-      </a>
-    </h1>
+  {% for category in site.categories %}
+  <h3>{{ category[0] }}</h3>
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-      {{ post.excerpt }}
-  </div>
-  {% endfor %}
-</div>
 
 <!-- 分页链接 -->
-{% if paginator.total_pages > 1 %}
+<!-- {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
@@ -44,4 +39,4 @@ title: Home
     <span>Next &raquo;</span>
   {% endif %}
 </div>
-{% endif %}
+{% endif %} -->
