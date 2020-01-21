@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title: 机器学习第三章(p53-p72)
 categories: [Computer Science]
 tags: [ML]
