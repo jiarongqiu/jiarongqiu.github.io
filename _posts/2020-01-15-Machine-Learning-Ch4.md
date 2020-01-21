@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: 机器学习第四章(p73-p95)
+title: 机器学习第四章-决策树
 categories: [Computer Science]
 tags: [ML]
 ---

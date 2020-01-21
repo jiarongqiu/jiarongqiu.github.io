@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: 机器学习第六章(p121-145)
+title: 机器学习第六章-支持向量机
 categories: [Computer Science]
 tags: [ML]
 ---

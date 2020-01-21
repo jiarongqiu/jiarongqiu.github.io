@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: 机器学习第三章(p53-p72)
+title: 机器学习第三章-线性模型
 categories: [Computer Science]
 tags: [ML]
 ---

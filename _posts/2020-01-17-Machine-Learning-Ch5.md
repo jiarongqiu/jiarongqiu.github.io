@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: 机器学习第五章(p97-120)
+title: 机器学习第五章-神经网络
 categories: [Computer Science]
 tags: [ML]
 ---
