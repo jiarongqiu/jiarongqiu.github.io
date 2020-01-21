@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title: 机器学习第二章(p23-p51)
 categories: [Computer Science]
 tags: [ML]

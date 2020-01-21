@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title: 机器学习第六章(p121-145)
 categories: [Computer Science]
 tags: [ML]
